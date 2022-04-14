@@ -11,6 +11,18 @@ This repository contains all the tests performed in the manuscript:
 ```
 @article{...}
 ```
+and
+```
+@software{Colomes_MonolithicFEMVLFS_2022,
+    author = {Colomes, Oriol},
+    doi = {10.4121/19601419},
+    month = {4},
+    title = {{MonolithicFEMVLFS.jl}},
+    url = {https://github.com/oriolcg/MonolithicFEMVLFS.jl},
+    year = {2022},
+    version = {0.1.0}
+}
+```
 ### Abstract
 In this work we present a novel monolithic Finite Element Method (FEM) for the hydroelastic analysis of Very Large Floating Structures (VLFS) with arbitrary shapes that is stable, energy conserving and overcomes the need of an iterative algorithm. The new formulation enables a fully monolithic solution of the linear free-surface flow, described by linear potential flow, coupled with floating thin structures, described by the Euler-Bernoulli beam or Poisson-Kirchhoff plate equations. 
 
