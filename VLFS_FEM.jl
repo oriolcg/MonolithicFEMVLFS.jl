@@ -48,6 +48,7 @@ include("scripts/5-1-4-periodic-beam-free-surface-energy.jl")
 include("scripts/5-2-1-Khabakhpasheva-freq-domain.jl")
 include("scripts/5-2-2-Khabakhpasheva-time-domain.jl")
 include("scripts/5-3-1-Liu.jl")
+include("scripts/5-4-1-Yago.jl")
 
 function run_tests(test::String)
   if test=="all"

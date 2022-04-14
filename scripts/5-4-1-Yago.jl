@@ -44,7 +44,7 @@ function run_5_4_1_Yago()
     dfactor=dfactor,
     vtk_output=true
   )
-  data, file = produce_or_load(path,case,run_yago_freq_case;digits=8)
+  data, file = produce_or_load(path,case,run_5_4_1;digits=8)
 
   # Case 2: λfactor=0.6
   λfactor = 0.6
