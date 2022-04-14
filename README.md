@@ -7,11 +7,11 @@ This repository contains all the tests performed in the manuscript:
 @article{...}
 ```
 ### Abstract
-Floating offshore structures are of great interest for many applications. A particular type of floating structures are the so called Very Large Floating Structures (VLFS). One can find several examples of VLFS, such as floating airports, floating solar energy installations, floating breakwaters, or even futuristic floating modular cities. The study of the behavior of VLFS is, therefore, relevant for a wide variety of industries and scientific disciplines.
+In this work we present a novel monolithic Finite Element Method (FEM) for the hydroelastic analysis of Very Large Floating Structures (VLFS) with arbitrary shapes that is stable, energy conserving and overcomes the need of an iterative algorithm. The new formulation enables a fully monolithic solution of the linear free-surface flow, described by linear potential flow, coupled with floating thin structures, described by the Euler-Bernoulli beam or Poisson-Kirchhoff plate equations. 
 
-In this work we present a novel monolithic Finite Element Method (FEM) for the hydroelastic analysis of VLFS with arbitrary shapes that is stable, energy conserving and overcomes the need of an iterative algorithm. The formulation presented in this work is general in the sense that solutions can be found in the frequency and time domains, and overcomes the need of using elements with $ C^1 $ continuity by employing a continuous/discontinuous Galerkin (C/DG) approach. 
+The formulation presented in this work is general in the sense that solutions can be found in the frequency and time domains, it overcomes the need of using elements with $ C^1 $ continuity by employing a continuous/discontinuous Galerkin (C/DG) approach, and it is suitable for finite elements of arbitrary order.
 
-We show that the proposed approach can accurately describe the hydroelastic phenomena of VLFS with a variety of tests, including structures with elastic joints, variable bathymetry and arbitrary strucutral shapes. The formulation is implemented on the novel Julia-based FEM package [Gridap.jl](https://github.com/gridap/Gridap.jl), which provides an efficient and user-friendly interface for the solution of complex mixed-dimensional PDEs.
+We show that the proposed approach can accurately describe the hydroelastic phenomena of VLFS with a variety of tests, including structures with elastic joints, variable bathymetry and arbitrary strucutral shapes.
 
 ## Installation
 `VLFS_FEM` is a package registered in the official [Julia package registry](https://github.com/JuliaRegistries/General).  Thus, the installation of this package is straight forward using the [Julia's package manager](https://julialang.github.io/Pkg.jl/v1/). Open the Julia REPL, type `]` to enter package mode, and install as follows
