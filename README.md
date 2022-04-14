@@ -1,4 +1,4 @@
-# VLFS_FEM
+# MonolithicFEMVLFS
 A monolithic Finite Element formulation for the hydroelastic analysis of Very Large Floating Structures
 
 This repository contains all the tests performed in the manuscript:
@@ -14,21 +14,21 @@ The formulation presented in this work is general in the sense that solutions ca
 We show that the proposed approach can accurately describe the hydroelastic phenomena of VLFS with a variety of tests, including structures with elastic joints, variable bathymetry and arbitrary strucutral shapes.
 
 ## Installation
-`VLFS_FEM` is a package registered in the official [Julia package registry](https://github.com/JuliaRegistries/General).  Thus, the installation of this package is straight forward using the [Julia's package manager](https://julialang.github.io/Pkg.jl/v1/). Open the Julia REPL, type `]` to enter package mode, and install as follows
+`MonolithicFEMVLFS` is a package registered in the official [Julia package registry](https://github.com/JuliaRegistries/General).  Thus, the installation of this package is straight forward using the [Julia's package manager](https://julialang.github.io/Pkg.jl/v1/). Open the Julia REPL, type `]` to enter package mode, and install as follows
 ```julia
-pkg> add VLFS_FEM
+pkg> add MonolithicFEMVLFS
 ```
 
 ## Usage
 To run all the test cases in the paper do:
 ```julia
-using VLFS_FEM
+using MonolithicFEMVLFS
 run_tests("all")
 ```
 
 To run only a specific test, for example the Khabakhpasheva test in frequency domain, do:
 ```julia
-using VLFS_FEM
+using MonolithicFEMVLFS
 run_tests("5-2-1-Khabakhpasheva-freq-domain.jl")
 ```
 Note that the numbers in front of the script indicate the section in the manuscript.

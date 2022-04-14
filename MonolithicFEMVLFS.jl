@@ -1,7 +1,7 @@
-module VLFS_FEM
+module MonolithicFEMVLFS
 
 using DrWatson
-@quickactivate "VLFS_FEM"
+@quickactivate "MonolithicFEMVLFS"
 
 using Plots
 using LaTeXStrings
