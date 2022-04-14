@@ -25,15 +25,15 @@ function run_5_2_2_Khavakhpasheva_time_domain()
     ny=ny,
     order=order
   )
-  produce_or_load(path,case,run_5_2_1;digits=8)
+  produce_or_load(path,case,run_5_2_2;digits=8)
 
   # Case 1: with joint
   case = Khabakhpasheva_time_domain_params(name="xi-0")
-  data, file = produce_or_load(path,case,run_5_2_1)
+  data, file = produce_or_load(path,case,run_5_2_2)
 
   # Case 2: without joint
   case = Khabakhpasheva_time_domain_params(ξ=625,name="xi-625")
-  data, file = produce_or_load(path,case,run_5_2_1)
+  data, file = produce_or_load(path,case,run_5_2_2)
 
   # Gather data
   res = collect_results(path)
