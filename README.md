@@ -34,3 +34,5 @@ include("scripts/5_2_1_Khabakhpasheva_freq_domain.jl")
 Note that the numbers in front of the script indicate the section in the manuscript.
 
 After execution, the data will be stored in the respective folder `data/<Section_number>_<test_name>`. If the flag to generate VTK files is active, the VTK output will be stored in `data/VTKOutput/<Section_number>_<test_name>`. The plots shown in the manuscript are stored in `plots/<Section_number>_<test_name>`.
+
+This repository uses DrWatson package, the data will only be generated the first time the tests are executed. If the data is already stored, the scripts will only regenerate the figures.

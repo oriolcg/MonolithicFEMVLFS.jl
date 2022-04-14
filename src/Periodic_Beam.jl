@@ -3,8 +3,6 @@ module Periodic_Beam
 using Gridap
 using Gridap.Geometry
 using Gridap.FESpaces
-using GridapODEs.TransientFETools
-using GridapODEs.ODETools
 using WriteVTK
 using Parameters
 
