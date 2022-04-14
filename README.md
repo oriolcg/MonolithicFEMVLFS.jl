@@ -1,4 +1,9 @@
 # MonolithicFEMVLFS
+
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://oriolcg.github.io/MonolithicFEMVLFS.jl/stable)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://oriolcg.github.io/MonolithicFEMVLFS.jl/dev)
+[![Build Status](https://github.com/oriolcg/MonolithicFEMVLFS.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/oriolcg/MonolithicFEMVLFS.jl/actions/workflows/CI.yml?query=branch%3Amain)
+
 A monolithic Finite Element formulation for the hydroelastic analysis of Very Large Floating Structures
 
 This repository contains all the tests performed in the manuscript:

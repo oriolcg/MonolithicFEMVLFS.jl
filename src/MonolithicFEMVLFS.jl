@@ -12,12 +12,12 @@ using CSV
 export run_tests
 
 # Include source files
-include("src/Periodic_Beam.jl")
-include("src/Periodic_Beam_FS.jl")
-include("src/Khabakhpasheva_freq_domain.jl")
-include("src/Khabakhpasheva_time_domain.jl")
-include("src/Liu.jl")
-include("src/Yago_freq_domain.jl")
+include("Periodic_Beam.jl")
+include("Periodic_Beam_FS.jl")
+include("Khabakhpasheva_freq_domain.jl")
+include("Khabakhpasheva_time_domain.jl")
+include("Liu.jl")
+include("Yago_freq_domain.jl")
 
 using .Periodic_Beam: Periodic_Beam_params, run_periodic_beam
 using .Periodic_Beam_FS: Periodic_Beam_FS_params, run_periodic_beam_FS
@@ -41,14 +41,14 @@ DrWatson.allaccess(c::Yago_freq_domain_params) = (:nx, :ny, :nz, :order, :λfact
 DrWatson.default_prefix(c::Yago_freq_domain_params) = c.name
 
 # Include script files
-include("scripts/5-1-1-periodic-beam-spatial-convergence.jl")
-include("scripts/5-1-2-periodic-beam-time-convergence.jl")
-include("scripts/5-1-3-periodic-beam-energy.jl")
-include("scripts/5-1-4-periodic-beam-free-surface-energy.jl")
-include("scripts/5-2-1-Khabakhpasheva-freq-domain.jl")
-include("scripts/5-2-2-Khabakhpasheva-time-domain.jl")
-include("scripts/5-3-1-Liu.jl")
-include("scripts/5-4-1-Yago.jl")
+include("../scripts/5-1-1-periodic-beam-spatial-convergence.jl")
+include("../scripts/5-1-2-periodic-beam-time-convergence.jl")
+include("../scripts/5-1-3-periodic-beam-energy.jl")
+include("../scripts/5-1-4-periodic-beam-free-surface-energy.jl")
+include("../scripts/5-2-1-Khabakhpasheva-freq-domain.jl")
+include("../scripts/5-2-2-Khabakhpasheva-time-domain.jl")
+include("../scripts/5-3-1-Liu.jl")
+include("../scripts/5-4-1-Yago.jl")
 
 function run_tests(test::String)
   if test=="all"

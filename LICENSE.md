@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Oriol Colomés
+Copyright (c) 2022 Oriol Colomes <oriol.colomes@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
