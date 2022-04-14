@@ -1,11 +1,4 @@
 
-include("../src/Periodic_Beam.jl")
-using .Periodic_Beam: Periodic_Beam_params, run_periodic_beam
-
-# Extend DrWatson functions
-DrWatson.allaccess(c::Periodic_Beam_params) = (:n, :dt, :tf, :order, :k)
-DrWatson.default_prefix(c::Periodic_Beam_params) = c.name
-
 function run_5_1_1_periodic_beam_sapatial_convergence()
 
   # Define Execution function
