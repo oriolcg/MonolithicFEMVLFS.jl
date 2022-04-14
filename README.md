@@ -36,3 +36,5 @@ Note that the numbers in front of the script indicate the section in the manuscr
 After execution, the data will be stored in the respective folder `data/<Section-number>-<test-name>`. If the flag to generate VTK files is active, the VTK output will be stored in `data/VTKOutput/<Section-number>-<test-name>`. The plots shown in the manuscript are stored in `plots/<Section-number>-<test-name>`.
 
 This repository uses DrWatson package, the data will only be generated the first time the tests are executed. If the data is already stored, the scripts will only regenerate the figures.
+
+The code snipped appearing in Figure 3 of the manuscript can be found in `src/lst_periodic_beam.jl`.
