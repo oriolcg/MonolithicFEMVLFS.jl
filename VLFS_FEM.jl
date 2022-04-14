@@ -59,21 +59,21 @@ function run_tests(test::String)
     run_5_2_2_Khavakhpasheva_time_domain()
     run_5_3_1_Liu()
     run_5_4_1_Yago()
-  elseif test == "5-1-1" | test == "5-1-1-periodic-beam-spatial-convergence"
+  elseif test == "5-1-1" || test == "5-1-1-periodic-beam-spatial-convergence"
     run_5_1_1_periodic_beam_sapatial_convergence()
-  elseif test == "5-1-2" | test == "5-1-2-periodic-beam-time-convergence"
+  elseif test == "5-1-2" || test == "5-1-2-periodic-beam-time-convergence"
     run_5_1_2_periodic_beam_time_convergence()
-  elseif test == "5-1-3" | test == "5-1-3-periodic-beam-energy"
+  elseif test == "5-1-3" || test == "5-1-3-periodic-beam-energy"
     run_5_1_3_periodic_beam_energy()
-  elseif test == "5-1-4" | test == "5-1-4-periodic-beam-free-surface-energy"
+  elseif test == "5-1-4" || test == "5-1-4-periodic-beam-free-surface-energy"
     run_5_1_4_periodic_beam_free_surface_energy()
-  elseif test == "5-2-1" | test == "5-2-1-Khavakhpasheva-freq-domain"
+  elseif test == "5-2-1" || test == "5-2-1-Khavakhpasheva-freq-domain"
     run_5_2_1_Khavakhpasheva_freq_domain()
-  elseif test == "5-2-2" | test == "5-2-2-Khavakhpasheva-time-domain"
+  elseif test == "5-2-2" || test == "5-2-2-Khavakhpasheva-time-domain"
     run_5_2_2_Khavakhpasheva_time_domain()
-  elseif test == "5-3-1" | test == "5-3-1-Liu"
+  elseif test == "5-3-1" || test == "5-3-1-Liu"
     run_5_3_1_Liu()
-  elseif test == "5-4-1" | test == "5-4-1-Yago"
+  elseif test == "5-4-1" || test == "5-4-1-Yago"
     run_5_4_1_Yago()
   end
 end

@@ -23,16 +23,16 @@ pkg> add VLFS_FEM
 To run all the test cases in the paper do:
 ```julia
 using VLFS_FEM
-include("scripts/run_all_tests.jl")
+run_tests("all")
 ```
 
 To run only a specific test, for example the Khabakhpasheva test in frequency domain, do:
 ```julia
 using VLFS_FEM
-include("scripts/5_2_1_Khabakhpasheva_freq_domain.jl")
+run_tests("5-2-1-Khabakhpasheva-freq-domain.jl")
 ```
 Note that the numbers in front of the script indicate the section in the manuscript.
 
-After execution, the data will be stored in the respective folder `data/<Section_number>_<test_name>`. If the flag to generate VTK files is active, the VTK output will be stored in `data/VTKOutput/<Section_number>_<test_name>`. The plots shown in the manuscript are stored in `plots/<Section_number>_<test_name>`.
+After execution, the data will be stored in the respective folder `data/<Section-number>-<test-name>`. If the flag to generate VTK files is active, the VTK output will be stored in `data/VTKOutput/<Section-number>-<test-name>`. The plots shown in the manuscript are stored in `plots/<Section-number>-<test-name>`.
 
 This repository uses DrWatson package, the data will only be generated the first time the tests are executed. If the data is already stored, the scripts will only regenerate the figures.
