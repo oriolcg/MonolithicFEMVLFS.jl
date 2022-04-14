@@ -17,12 +17,14 @@ include("src/Periodic_Beam_FS.jl")
 include("src/Khabakhpasheva_freq_domain.jl")
 include("src/Khabakhpasheva_time_domain.jl")
 include("src/Liu.jl")
+include("src/Yago_freq_domain.jl")
 
 using .Periodic_Beam: Periodic_Beam_params, run_periodic_beam
 using .Periodic_Beam_FS: Periodic_Beam_FS_params, run_periodic_beam_FS
 using .Khabakhpasheva_freq_domain: Khabakhpasheva_freq_domain_params, run_Khabakhpasheva_freq_domain
 using .Khabakhpasheva_time_domain: Khabakhpasheva_time_domain_params, run_Khabakhpasheva_time_domain
 using .Liu: Liu_params, run_Liu
+using .Yago_freq_domain: Yago_freq_domain_params, run_Yago_freq_domain
 
 # Extend DrWatson functions
 DrWatson.allaccess(c::Periodic_Beam_params) = (:n, :dt, :tf, :order, :k)
@@ -35,6 +37,8 @@ DrWatson.allaccess(c::Khabakhpasheva_time_domain_params) = (:nx, :ny, :order, :�
 DrWatson.default_prefix(c::Khabakhpasheva_time_domain_params) = c.name
 DrWatson.allaccess(c::Liu_params) = (:ω,)
 DrWatson.default_prefix(c::Liu_params) = c.name
+DrWatson.allaccess(c::Yago_freq_domain_params) = (:nx, :ny, :nz, :order, :λfactor, :dfactor)
+DrWatson.default_prefix(c::Yago_freq_domain_params) = c.name
 
 # Include script files
 include("scripts/5-1-1-periodic-beam-spatial-convergence.jl")
@@ -54,6 +58,7 @@ function run_tests(test::String)
     run_5_2_1_Khavakhpasheva_freq_domain()
     run_5_2_2_Khavakhpasheva_time_domain()
     run_5_3_1_Liu()
+    run_5_4_1_Yago()
   elseif test == "5-1-1" | test == "5-1-1-periodic-beam-spatial-convergence"
     run_5_1_1_periodic_beam_sapatial_convergence()
   elseif test == "5-1-2" | test == "5-1-2-periodic-beam-time-convergence"
@@ -68,6 +73,8 @@ function run_tests(test::String)
     run_5_2_2_Khavakhpasheva_time_domain()
   elseif test == "5-3-1" | test == "5-3-1-Liu"
     run_5_3_1_Liu()
+  elseif test == "5-4-1" | test == "5-4-1-Yago"
+    run_5_4_1_Yago()
   end
 end
 

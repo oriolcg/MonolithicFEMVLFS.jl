@@ -130,7 +130,7 @@ function run_periodic_beam(params)
   E_pot_f₀ = 0.25 * Dᵨ * k^4 * η₀^2 * L
   E_ela_s₀ = 0.25 * g * η₀^2 * L
   if vtk_output == true
-    filename = "data/VTKOutput/Periodic_Beam/"*name
+    filename = "data/VTKOutput/5-1-1-periodic-beam/"*name
     pvd_Ω = paraview_collection(filename * "_O", append=false)
     pvd_Γ = paraview_collection(filename * "_G", append=false)
   end

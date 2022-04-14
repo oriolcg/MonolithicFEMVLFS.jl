@@ -191,7 +191,7 @@ function run_Khabakhpasheva_time_domain(params::Khabakhpasheva_time_domain_param
 
 
   if vtk_output == true
-    filename = "data/VTKOutput/Khabakhpasheva_time_domain/"*name
+    filename = "data/VTKOutput/5-2-2-Khabakhpasheva-time-domain/"*name
     writevtk(Ω,filename*"_O")
     writevtk(Γ,filename*"_G")
     writevtk(Γb1,filename*"_Gb1")

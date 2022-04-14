@@ -104,7 +104,7 @@ function run_periodic_beam_FS(params)
 
 
   if vtk_output == true
-    filename = "data/VTKOutput/Periodic_Beam_FS/"*name
+    filename = "data/VTKOutput/5-1-4-periodic-beam-free-surface/"*name
     writevtk(Ω,filename*"_O")
     writevtk(Γ,filename*"_G")
     writevtk(Γb,filename*"_Gb")
@@ -179,7 +179,7 @@ function run_periodic_beam_FS(params)
   E_ela_s₀ = 0.25 * Dᵨ * k^4 * η₀^2 * Lb
   E_pot_f₀ = 0.25 * g * η₀^2 * L
   if vtk_output == true
-    filename = "data/VTKOutput/Periodic_Beam_FS/"*name
+    filename = "data/VTKOutput/5-1-4-periodic-beam-free-surface/"*name
     pvd_Ω = paraview_collection(filename * "_O", append=false)
     pvd_Γ = paraview_collection(filename * "_G", append=false)
   end

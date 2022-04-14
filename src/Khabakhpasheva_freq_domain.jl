@@ -181,7 +181,7 @@ function run_Khabakhpasheva_freq_domain(params::Khabakhpasheva_freq_domain_param
   Λj = Skeleton(Γ,Λj_to_Γ_mask)
 
   if vtk_output == true
-    filename = "data/VTKOutput/Khabakhpasheva_freq_domain/"*name
+    filename = "data/VTKOutput/5-2-1-Khabakhpasheva-freq-domain/"*name
     writevtk(Ω,filename*"_O")
     writevtk(Γ,filename*"_G")
     writevtk(Γb1,filename*"_Gb1")
