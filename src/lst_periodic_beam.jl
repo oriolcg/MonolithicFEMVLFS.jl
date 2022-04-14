@@ -2,12 +2,13 @@ using Gridap
 using WriteVTK
 
 # Parameters
-L = 2.0*π; H = 1.0; k = 10; η₀ = 0.01; g = 9.81;
+L = 2.0*π; H = 1.0; k = 10; η₀ = 0.01; g = 9.81
 ρ_w = 1.0e3; λ = 2*π/k; ω = √(g*k*tanh(k*H))
 ρ_b = 1.0e2; h_b = 1.0e-2; d₀ = ρ_b*h_b/ρ_w
-Dρ = ρ_b*h_b*ω^2/(k^4)/ρ_w;
+Dρ = ρ_b*h_b*ω^2/(k^4)/ρ_w
 dt = 0.001; γ_t = 0.5; β_t = 0.25; t₀ = 0.0; tf = 1.0
-order = 2; degree = 2*order; n = 30; h = L/n; γ = 1.0*order*(order+1)
+order = 2; degree = 2*order; n = 30; h = L/n
+γ = 1.0*order*(order+1)
 
 # Finite element mesh
 domain = (0.0,L,0.0,H); partition = (2*n,n)
