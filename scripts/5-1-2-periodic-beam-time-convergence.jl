@@ -76,12 +76,12 @@ function run_5_1_2_periodic_beam_time_convergence()
   plt1 = plot(
     fontsize=12,
     legend=:topleft,
-    legendfontsize=8
+    legendfontsize=10
   )
   plt2 = plot(
     fontsize=12,
     legend=:topleft,
-    legendfontsize=8
+    legendfontsize=10
   )
   xlabel!(plt1,"Time step size")
   xlabel!(plt2,"Time step size")

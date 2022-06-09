@@ -74,12 +74,12 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
   plt1 = plot(
     fontsize=12,
     legend=:bottomleft,
-    legendfontsize=8
+    legendfontsize=10
   )
   plt2 = plot(
     fontsize=12,
     legend=:bottomleft,
-    legendfontsize=8
+    legendfontsize=10
   )
   xlabel!(plt1,"Number of elements in x-direction")
   xlabel!(plt2,"Number of elements in x-direction")
@@ -101,7 +101,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       shape=shapes[iorder],
       color=:blue,
       style=styles[iorder],
-      msize=5,
+      msize=4,
       label="r=$(order)"
     )
     plot!(plt2,
@@ -111,7 +111,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       shape=shapes[iorder],
       color=:red,
       style=styles[iorder],
-      msize=5,
+      msize=4,
       label="r=$(order+1)"
     )
   end

@@ -92,12 +92,12 @@ function run_5_1_4_periodic_beam_free_surface_energy()
   plt1 = plot(
     fontsize=12,
     legend=:outerright,
-    legendfontsize=8,
+    legendfontsize=10,
   )
   plt2 = plot(
     fontsize=12,
     legend=:topleft,
-    legendfontsize=8,
+    legendfontsize=10,
     xaxis=:log,
     yaxis=:log,
   )
