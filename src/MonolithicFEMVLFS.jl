@@ -27,7 +27,7 @@ using .Liu: Liu_params, run_Liu
 using .Yago_freq_domain: Yago_freq_domain_params, run_Yago_freq_domain
 
 # Extend DrWatson functions
-DrWatson.allaccess(c::Periodic_Beam_params) = (:n, :dt, :tf, :order, :k)
+DrWatson.allaccess(c::Periodic_Beam_params) = (:n, :dt, :tf, :orderϕ, :orderη, :k)
 DrWatson.default_prefix(c::Periodic_Beam_params) = c.name
 DrWatson.allaccess(c::Periodic_Beam_FS_params) = (:n, :dt, :tf, :order, :k)
 DrWatson.default_prefix(c::Periodic_Beam_FS_params) = c.name

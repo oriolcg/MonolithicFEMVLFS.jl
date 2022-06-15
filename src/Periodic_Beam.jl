@@ -14,7 +14,8 @@ export Periodic_Beam_params
   n::Int = 4
   dt::Real = 0.001
   tf::Real = 1.0
-  order::Int = 2
+  orderϕ::Int = 2
+  orderη::Int = 2
   k::Int = 10
   vtk_output = false
 end
@@ -22,7 +23,7 @@ end
 function run_periodic_beam(params)
 
   # Unpack input parameters
-  @unpack name, n, dt, tf, order, k, vtk_output = params
+  @unpack name, n, dt, tf, orderϕ, orderη, k, vtk_output = params
 
   # Fixed parameters
   ## Geometry
@@ -52,7 +53,7 @@ function run_periodic_beam(params)
 
   ## Numerics (space discretization)
   h = L/n
-  γ = 10.0*order*(order+1)
+  γ = 10.0*orderη*(orderη+1)
 
   # Define fluid domain
   println("Defining fluid domain")
@@ -75,15 +76,15 @@ function run_periodic_beam(params)
 
   # Quadratures
   println("Defining quadratures")
-  degree = 2*order
+  degree = 2*orderη
   dΩ = Measure(Ω,degree)
   dΓ = Measure(Γ,degree)
   dΛ = Measure(Λ,degree)
 
   # FE spaces
   println("Defining FE spaces")
-  reffe_Ω = ReferenceFE(lagrangian,Float64,order)
-  reffe_Γ = ReferenceFE(lagrangian,Float64,order)
+  reffe_Ω = ReferenceFE(lagrangian,Float64,orderϕ)
+  reffe_Γ = ReferenceFE(lagrangian,Float64,orderη)
   V_Ω = TestFESpace(Ω,reffe_Ω,conformity=:H1)
   V_Γ = TestFESpace(Γ,reffe_Γ,conformity=:H1)
   U_Ω = TransientTrialFESpace(V_Ω)

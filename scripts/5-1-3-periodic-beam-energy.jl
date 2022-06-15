@@ -42,7 +42,8 @@ function run_5_1_3_periodic_beam_energy()
     dt=Δt,
     tf=T,
     k=k,
-    order=order,
+    orderϕ=order,
+    orderη=order,
     vtk_output=false
   )
   produce_or_load(path,case,run_5_1_3;digits=8)
@@ -64,7 +65,8 @@ function run_5_1_3_periodic_beam_energy()
       dt=Δt,
       tf=tf1,
       k=k,
-      order=order
+      orderϕ=order,
+      orderη=order
     )
     data, file = produce_or_load(path,case,run_5_1_3;digits=8)
   end
@@ -81,7 +83,8 @@ function run_5_1_3_periodic_beam_energy()
       dt=Δt,
       tf=tf2,
       k=k,
-      order=order
+      orderϕ=order,
+      orderη=order
     )
     data, file = produce_or_load(path,case,run_5_1_3;digits=8)
   end
@@ -118,7 +121,7 @@ function run_5_1_3_periodic_beam_energy()
     Δti = 1.0e-3
     nelem = 2^(i+1)
     nx = 2*nelem
-    res_elem  = @linq res |> where(:order .== order, :k .== k, :dt .== Δti, :n.==nelem, :tf .== round(tf1,digits=8))
+    res_elem  = @linq res |> where(:orderϕ .== order, :orderη .== order, :k .== k, :dt .== Δti, :n.==nelem, :tf .== round(tf1,digits=8))
     t = res_elem[!,:time]
     E_tot = res_elem[!,:E_kin_f]+res_elem[!,:E_pot_f]+res_elem[!,:E_kin_s]+res_elem[!,:E_ela_s]
     E_tot₀ = res_elem[!,:E_kin_f₀]+res_elem[!,:E_pot_f₀]+res_elem[!,:E_kin_s₀]+res_elem[!,:E_ela_s₀]
@@ -138,7 +141,7 @@ function run_5_1_3_periodic_beam_energy()
     order = 4
     nelem = 64
     Δt = round(tf2 * 2^(-1.0-i),digits=8)
-    res_time  = @linq res |> where(:order .== order, :k .== k, :dt .== Δt, :n.==nelem, :tf .== round(tf2,digits=8))
+    res_time  = @linq res |> where(:orderϕ .== order, :orderη .== order, :k .== k, :dt .== Δt, :n.==nelem, :tf .== round(tf2,digits=8))
     t = res_time[!,:time]
     E_tot = res_time[!,:E_kin_f]+res_time[!,:E_pot_f]+res_time[!,:E_kin_s]+res_time[!,:E_ela_s]
     E_tot₀ = res_time[!,:E_kin_f₀]+res_time[!,:E_pot_f₀]+res_time[!,:E_kin_s₀]+res_time[!,:E_ela_s₀]

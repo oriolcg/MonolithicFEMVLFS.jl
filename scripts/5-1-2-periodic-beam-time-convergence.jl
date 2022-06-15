@@ -32,7 +32,8 @@ function run_5_1_2_periodic_beam_time_convergence()
     dt=Δt,
     tf=T,
     k=k,
-    order=order,
+    orderϕ=order,
+    orderη=order,
     vtk_output=false
   )
   produce_or_load(path,case,run_5_1_2;digits=8)
@@ -53,7 +54,8 @@ function run_5_1_2_periodic_beam_time_convergence()
       dt=Δt,
       tf=tf,
       k=k,
-      order=order
+      orderϕ=order,
+      orderη=order
     )
     data, file = produce_or_load(path,case,run_5_1_2;digits=8)
     println("dt ",Δt," e ",data["e_ϕ_i"])
@@ -66,7 +68,8 @@ function run_5_1_2_periodic_beam_time_convergence()
     tf=tf,
     k=k,
     n=nelem,
-    order=order,
+    orderϕ=order,
+    orderη=order,
   )
   plotName = savename(plot_case;ignores=("dt"),digits=8)
 
@@ -89,7 +92,7 @@ function run_5_1_2_periodic_beam_time_convergence()
   ylabel!(plt2,"Error")
   styles = [:dash,:dashdot,:dashdotdot]
   shapes = [:square,:circle,:utriangle]
-  res_dt  = @linq res |> where(:order .== order, :k .== k, :n .== nelem, :tf .== tf) #|> orderby(:dt)
+  res_dt  = @linq res |> where(:orderϕ .== order, :orderη .== order, :k .== k, :n .== nelem, :tf .== tf) #|> orderby(:dt)
   errors_ϕ = res_dt[!,:e_ϕ_i]
   errors_η = res_dt[!,:e_η_i]
   Δts = res_dt[!,:dt]
