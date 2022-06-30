@@ -1,7 +1,7 @@
 name = "MonolithicFEMVLFS"
 uuid = "02a35734-3e3a-4c9f-8994-84c0fbc3ad2f"
 authors = ["Oriol Colomes <oriol.colomes@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
