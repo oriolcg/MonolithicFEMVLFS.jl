@@ -10,6 +10,7 @@ export MultiGeo_freq_domain_params
 
 @with_kw struct MultiGeo_freq_domain_params
   name::String = "MultigeoFreq"
+  mesh_file::String = "models/multi_geo_coarse.json"
   order::Int = 4
   dfactor::Real = 3
   vtk_output = false
@@ -18,7 +19,7 @@ end
 function run_MultiGeo_freq_domain(params)
 
   # Unpack input parameters
-  @unpack name, order, dfactor, vtk_output = params
+  @unpack name, mesh_file, order, dfactor, vtk_output = params
 
   # Fixed parameters
   ## Physics
@@ -62,7 +63,12 @@ function run_MultiGeo_freq_domain(params)
 
   # Define fluid model
   println("Defining fluid model")
-  model_Ω = DiscreteModelFromFile("models/multi_geo.json")
+  model_Ω = DiscreteModelFromFile(mesh_file)
+
+  # Create masks in Ω
+  labels_Ω = get_face_labeling(model_Ω)
+  Γb_mask_in_Ω = get_face_mask(labels_Ω,["plate"],2)
+  Γf_mask_in_Ω = get_face_mask(labels_Ω,["freeSurface"],2)
 
   # Triangulations
   Ω = Interior(model_Ω)
@@ -73,7 +79,7 @@ function run_MultiGeo_freq_domain(params)
   Λb = Skeleton(Γb)
 
   ## Numerics (space discretization)
-  h = lazy_map(A->√(A),get_cell_measure(Γb))# LΩ/(nLΩ*nx)
+  h = get_cell_measure(Λb) #0.1
   βₕ = 0.5
   αₕ = -im*ω/g * (1-βₕ)/βₕ
   γ = 1.0*order*(order+1)/h
@@ -129,7 +135,7 @@ function run_MultiGeo_freq_domain(params)
   xₕ = solve(op)
 
   if vtk_output == true
-    filename = "data/VTKOutput/5-4-1-MultiGeo/"*name
+    filename = "data/VTKOutput/5-5-1-MultiGeo/"*name
   end
 
   println("Computing solution")

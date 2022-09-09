@@ -41,7 +41,7 @@ DrWatson.allaccess(c::Liu_params) = (:ω,)
 DrWatson.default_prefix(c::Liu_params) = c.name
 DrWatson.allaccess(c::Yago_freq_domain_params) = (:nx, :ny, :nz, :order, :λfactor, :dfactor)
 DrWatson.default_prefix(c::Yago_freq_domain_params) = c.name
-DrWatson.allaccess(c::MultiGeo_freq_domain_params) = (:order, :dfactor)
+DrWatson.allaccess(c::MultiGeo_freq_domain_params) = (:mesh_file, :order, :dfactor)
 DrWatson.default_prefix(c::MultiGeo_freq_domain_params) = c.name
 
 # Include script files
