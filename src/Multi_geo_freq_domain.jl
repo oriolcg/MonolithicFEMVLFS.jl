@@ -51,7 +51,7 @@ function run_MultiGeo_freq_domain(params)
 
   # Wave properties
   H = 3
-  λ = 1.5
+  λ = 1.0
   k = 2π/λ
   ω = √(g*k*tanh(k*H))
   T = 2π/ω
@@ -79,7 +79,7 @@ function run_MultiGeo_freq_domain(params)
   Λb = Skeleton(Γb)
 
   ## Numerics (space discretization)
-  h = get_cell_measure(Λb) #0.1
+  h = CellField(get_cell_measure(Λb),Λb) #0.1
   βₕ = 0.5
   αₕ = -im*ω/g * (1-βₕ)/βₕ
   γ = 1.0*order*(order+1)/h
@@ -88,8 +88,8 @@ function run_MultiGeo_freq_domain(params)
   μ₀ = 2.5
   Ld = 3
   Ld₀ = 3
-  xd = 14
-  xd₀ = 3
+  xd = 10
+  xd₀ = -1
   μ₁(x) = μ₀*(1.0 - cos(π/2*(x[1]-xd)/Ld)) * (x[1]>xd) + μ₀*(1-cos(π/2*(Ld₀-x[1])/Ld₀)) * (x[1]<xd₀)
   μ₂(x) = μ₁(x)*k
   ηd(x) = μ₂(x)*ηᵢₙ(x)*(x[1]<xd₀)
