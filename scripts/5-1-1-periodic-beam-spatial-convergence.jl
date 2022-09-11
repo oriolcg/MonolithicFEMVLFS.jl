@@ -107,17 +107,26 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
   plt1 = plot(
     fontsize=12,
     legend=:bottomleft,
-    legendfontsize=10
+    legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
+    thickness_scaling=1
   )
   plt2 = plot(
     fontsize=12,
     legend=:bottomleft,
-    legendfontsize=10
+    legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
+    thickness_scaling=1
   )
   plt3 = plot(
     fontsize=12,
     legend=:bottomleft,
-    legendfontsize=10
+    legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
+    thickness_scaling=1
   )
   xlabel!(plt1,"Number of elements in x-direction")
   xlabel!(plt2,"Number of elements in x-direction")
@@ -135,6 +144,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
     res_order_fixed  = @linq res |> where(:orderϕ .== 2, :orderη .== order, :k .== k, :dt .== Δt, :tf .== tf) |> orderby(:n)
     local_errors_ϕ = res_order[!,:e_ϕ_i]
     local_errors_η = res_order[!,:e_η_i]
+    println(res_order)
     local_errors_η_fixed = res_order_fixed[!,:e_η_i]
     plot!(plt1,
       nelems,local_errors_ϕ,
@@ -144,6 +154,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       color=:blue,
       style=styles[iorder],
       msize=4,
+      linewidth=2,
       label="r=$(order)"
     )
     plot!(plt2,
@@ -154,6 +165,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       color=:red,
       style=styles[iorder],
       msize=4,
+      linewidth=2,
       label="r=$(order+1)"
     )
     plot!(plt3,
@@ -164,6 +176,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       color=:red,
       style=styles[iorder],
       msize=4,
+      linewidth=2,
       label="r=$(order+1)"
     )
   end
@@ -174,6 +187,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       color=:black,
       style=styles[iorder],
       label=rate_label,
+      linewidth=2,
       xticks=(nelems,[string(2*nelem) for nelem in nelems])
     )
     plot!(plt2,
@@ -181,6 +195,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       color=:black,
       style=styles[iorder],
       label=rate_label,
+      linewidth=2,
       xticks=(nelems,[string(2*nelem) for nelem in nelems])
     )
     plot!(plt3,
@@ -188,6 +203,7 @@ function run_5_1_1_periodic_beam_sapatial_convergence()
       color=:black,
       style=styles[iorder],
       label=rate_label,
+      linewidth=2,
       xticks=(nelems,[string(2*nelem) for nelem in nelems])
     )
   end

@@ -79,12 +79,18 @@ function run_5_1_2_periodic_beam_time_convergence()
   plt1 = plot(
     fontsize=12,
     legend=:topleft,
-    legendfontsize=10
+    legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
+    thickness_scaling=1
   )
   plt2 = plot(
     fontsize=12,
     legend=:topleft,
-    legendfontsize=10
+    legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
+    thickness_scaling=1
   )
   xlabel!(plt1,"Time step size")
   xlabel!(plt2,"Time step size")
@@ -106,6 +112,7 @@ function run_5_1_2_periodic_beam_time_convergence()
     color=:blue,
     style=styles[order-1],
     msize=5,
+    linewidth=2,
     label=L"\|\phi-\phi_h\|"
   )
   plot!(plt2,
@@ -116,6 +123,7 @@ function run_5_1_2_periodic_beam_time_convergence()
     color=:red,
     style=styles[order-1],
     msize=5,
+    linewidth=2,
     label=L"\|\eta-\eta_h\|"#latexstring("\|\eta_h-\eta\|")
   )
   rate_label = latexstring("dt^{-2}")
@@ -124,6 +132,7 @@ function run_5_1_2_periodic_beam_time_convergence()
     color=:black,
     style=styles[order-1],
     label=rate_label,
+    linewidth=2,
     xticks=(Δts,[string(Δt) for Δt in Δts])
   )
   plot!(plt2,
@@ -131,6 +140,7 @@ function run_5_1_2_periodic_beam_time_convergence()
     color=:black,
     style=styles[order-1],
     label=rate_label,
+    linewidth=2,
     xticks=(Δts,[string(Δt) for Δt in Δts])
   )
 

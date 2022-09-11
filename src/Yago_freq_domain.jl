@@ -45,14 +45,14 @@ function run_Yago_freq_domain(params)
   E = 11.9e9
   ρb = 256.25
   ν = 0.13
-  D = 4.77e11
+  I = hb^3/12
+  D = E*I/(1.0-ν^2)
   d₀ = ρb*hb/ρ
 
   δ(x,y) = ==(x,y)
   C = SymFourthOrderTensorValue{3,Float64}
   μ = E/(2*(1+ν))
   λ = ν*E/(1-ν^2)
-  I = hb^3/12
   Cvals = zero(Array{Float64}(undef,36))
   for i in 1:2
     for j in 1:2

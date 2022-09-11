@@ -96,11 +96,15 @@ function run_5_1_3_periodic_beam_energy()
     fontsize=12,
     legend=:outerright,
     legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
   )
   plt2 = plot(
     fontsize=12,
     legend=:topleft,
     legendfontsize=10,
+    xtickfontsize=10,
+    ytickfontsize=10,
     xaxis=:log,
     yaxis=:log,
   )
@@ -154,12 +158,14 @@ function run_5_1_3_periodic_beam_energy()
     shape=shapes[3],
     color=:red,
     style=styles[3],
+    linewidth=2,
     label="r=4, n=128"
   )
   plot!(plt2,
     Δts,0.4*Δts.^(2),
     color=:black,
     style=styles[3],
+    linewidth=2,
     label=latexstring("dt^{-2}"),
     xticks=(Δts,["T/$(2^(i+1))" for i in 1:length(Δts)])
   )
