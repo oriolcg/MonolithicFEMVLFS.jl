@@ -9,15 +9,15 @@ A monolithic Finite Element formulation for the hydroelastic analysis of Very La
 This repository contains all the tests performed in the manuscript:
 *A Monolithic Finite Element formulation for Very Large Floating Structures* by Oriol Colomés, Francesc Verdugo and Ido Akkerman. If you use this formulation, please cite:
 ```
-@article{colomes2022monolithic,
-  doi = {10.48550/ARXIV.2206.12410},
-  url = {https://arxiv.org/abs/2206.12410},
-  author = {Colomés, Oriol and Verdugo, Francesc and Akkerman, Ido},
-  keywords = {Computational Engineering, Finance, and Science (cs.CE), Numerical Analysis (math.NA), FOS: Computer and information sciences, FOS: Computer and information sciences, FOS: Mathematics, FOS: Mathematics},
-  title = {A monolithic Finite Element formulation for the hydroelastic analysis of Very Large Floating Structures},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}
+@article{colomes2023monolithic,
+  title={A monolithic finite element formulation for the hydroelastic analysis of very large floating structures},
+  author={Colom{\'e}s, Oriol and Verdugo, Francesc and Akkerman, Ido},
+  journal={International Journal for Numerical Methods in Engineering},
+  volume={124},
+  number={3},
+  pages={714--751},
+  year={2023},
+  publisher={Wiley Online Library}
 }
 ```
 and
