@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Colomés"
+  given-names: "Oriol"
+  orcid: "https://orcid.org/0000-0002-5552-9695"
+title: "MonolithicFEMVLFS.jl"
+version: 0.1.1
+doi: 10.4121/19601419
+date-released: 2022-06-30
+url: "https://github.com/oriolcg/MonolithicFEMVLFS.jl"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Colomés"
+    given-names: "Oriol"
+    orcid: "https://orcid.org/0000-0002-5552-9695"
+  - family-names: "Verdugo"
+    given-names: "Francesc"
+    orcid: "https://orcid.org/0000-0003-3667-443X"
+  - family-names: "Akkerman"
+    given-names: "Ido"
+    orcid: "https://orcid.org/0000-0002-5937-0300"
+  doi: "10.1002/nme.7140"
+  journal: "International Journal for Numerical Methods in Engineering"
+  month: 2
+  start: 714 # First page number
+  end: 751 # Last page number
+  title: "A monolithic finite element formulation for the hydroelastic analysis of very large floating structures"
+  issue: 3
+  volume: 124
+  year: 2023
